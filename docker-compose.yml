@@ -1,0 +1,14 @@
+version: "2"
+services:
+  psd:
+    build: .
+    ports:
+      - "4916:3000"
+      - "9229:9229"
+    working_dir: /app
+    env_file: .env
+    volumes:
+      - .:/app
+      - logvolume01:/var/log
+volumes:
+  logvolume01: {}
